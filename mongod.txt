@@ -1,0 +1,15 @@
+mongod - starts the server
+mongo - starts the mongo shell
+show dbs - shows all dbs
+use demo - starts using the DB or creates if it doesn't exist
+show collections - shows all collections within the DB
+
+db.dogs.insert({name: "Rusty", breed: "Mutt"}) - Inserts a dog and creates the collection dogs if it doesn't exist
+db.dogs.find() - finds all dogs
+db.dogs.find({name: "Rusty"}) - finds dogs with name Rusty
+db.dogs.update({name: "Lulu", breed: "Mutt"}) - it deletes Lulu's name prop and changes it's breed to Mutt
+db.dogs.update({name: "Rusty}, {$set: {name: "Tater", isCute: true}}) - dá update ao nome do Rusty para Tator e acrescenta a prop isCute
+db.dogs.remove({breed: "Labradoodle"}) - removes all Labradoodle
+db.dogs.remove({breed: "Labradoodle"}).limit(1) - Removes only 1 dog (first) that is Labradoodle
+
+

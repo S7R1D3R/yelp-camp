@@ -33,7 +33,6 @@ router.post("/register", (req, res) => {
         }
 
         passport.authenticate("local")(req, res, () => {
-            campgrounds
             res.redirect("/campgrounds");
         });
     });

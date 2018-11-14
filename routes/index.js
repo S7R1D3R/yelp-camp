@@ -28,11 +28,12 @@ router.post("/register", (req, res) => {
 
         if(err) {
 
-            console.log(err);
+            req.flash("error", err);
             return res.render("register");
         }
 
         passport.authenticate("local")(req, res, () => {
+            req.flash("success", "Welcome to Yelp Camp " + user.username);
             res.redirect("/campgrounds");
         });
     });
@@ -61,16 +62,5 @@ router.get("/logout", (req, res) => {
     req.flash("success", "Logged out.");
     res.redirect("/campgrounds");
 })
-
-// Middleware
-function isLoggedIn(req, res, next) {
-
-    if(req.isAuthenticated()) {
-
-        return next();
-    }
-
-    res.redirect("/login");
-}
 
 module.exports = router;

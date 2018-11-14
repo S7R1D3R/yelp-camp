@@ -42,10 +42,9 @@ app.use(flash());
 
 // =================================
 //      Passport Configuration
-// =================================
+// ========================// Middleware
 app.use(require("express-session")({
-    
-    secret: "atgestrWSTJRWTrwaoykjhret23458246943qjgasygjzsdfysr5643kj6",
+    secret: "atgestrWSTJRrwaoykjhret23458246943qjgasygjzsdfysr5643kj6",
     resave: false,
     saveUninitialized: false
 }));
